@@ -1,0 +1,20 @@
+#include <stdio.h>
+#define N 7 
+
+int L[N]={2, 3, 1, 9, 10, 12, 15};
+int crescente;
+
+int main(){
+    int i;
+    crescente=1;
+    for(i=1;i<N;i++){
+        if(L[i]<L[i-1]){
+            crescente=0;
+            break;
+        }
+    }
+
+    printf("%d", crescente);
+    
+    return 0;
+}
