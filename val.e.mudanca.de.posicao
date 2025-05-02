@@ -1,0 +1,36 @@
+#include <stdio.h>
+#define N 6 
+
+int L[N]={2,4,5,7,8,9};
+int k, val;
+
+int main(){
+    printf("Insira a posição: \n");
+    scanf("%d", & k);
+    printf("Agora insira o valor para soma ou subtração: \n");
+    scanf("%d", & val);
+    int i;
+    L[k]=L[k]+val;
+    if(val>=0){
+        for(i=k;i<N-1;i++){
+            if(L[i]>L[i+1]){
+                int t= L[i+1];
+                L[i+1]=L[i];
+                L[i]=t;
+            }
+        }
+    }else{
+        for(i=k;i>0;i--){
+            if(L[i-1]>L[i]){
+                int t2 = L[i-1];
+                L[i-1]=L[i];
+                L[i]=t2;
+            }
+        }
+    }
+    for(i=0;i<N;i++){
+        printf("%d ", L[i]);
+    }
+    
+    return 0;
+}
